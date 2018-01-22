@@ -1,0 +1,21 @@
+{
+  "language": "language",
+
+  "side_panel": {
+    "my_profile": "PROFILE",
+    "pets_date": "DATE",
+    "service": "SERVICES"
+  },
+
+  "profile": {
+    "title": "PROFILE"
+  },
+
+  "date": {
+    "title": "DATE"
+  },
+
+  "service": {
+    "title": "SERVICE"
+  }
+}

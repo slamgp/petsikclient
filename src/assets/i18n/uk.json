@@ -1,0 +1,22 @@
+{
+  "title": "ПРИВІТ!!!",
+  "language": "мова",
+
+  "side_panel": {
+    "my_profile": "ПРОФІЛЬ",
+    "pets_date": "ПОБАЧЕННЯ",
+    "service": "СЕРВІСИ"
+  },
+
+  "profile": {
+    "title": "ПРОФІЛЬ"
+  },
+
+  "date": {
+    "title": "ПОБАЧЕННЯ"
+  },
+
+  "service": {
+    "title": "СЕРВІСИ"
+  }
+}

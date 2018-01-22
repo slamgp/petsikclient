@@ -1,0 +1,21 @@
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
+}
+.side-nav {
+  background: linear-gradient(#4caf50, #1b5e20);
+  margin-top: 64px;
+  width: 200px;
+}
+
+.side-nav a {
+  color: white;
+  font-family: GillSans, Calibri, Trebuchet, sans-serif;
+  font-size: 1.5em;
+}
+
+.side-nav li:hover {
+  cursor: pointer;
+}
+
