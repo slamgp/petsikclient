@@ -1,7 +1,13 @@
+<div class = "div-with-shadow">
 
-<ul id="slide-out" class="side-nav fixed">
-  <li><a routerLink = "/">{{ 'side_panel.my_profile' | translate:param }}</a></li>
-  <li><a routerLink = "/date">{{ 'side_panel.pets_date' | translate:param }}</a></li>
-  <li><a routerLink = "/service">{{ 'side_panel.service' | translate:param }}</a></li>
-</ul>
-<a data-activates="slide-out" #menuButton (click) = "onClickSidePanel(menuButton)" class="button-collapse"><i class="material-icons">menu</i></a>
+  <ul id="slide-out" class="side-nav fixed">
+  <app-user-avatar></app-user-avatar>
+    <li><a routerLink = "/">{{ 'side_panel.my_profile' | translate:param }}</a></li>
+    <li><a routerLink = "/pets">{{ 'side_panel.my_pets' | translate:param }}</a></li>
+    <li><a routerLink = "/board">{{ 'side_panel.board' | translate:param }}</a></li>
+    <li><a routerLink = "/service">{{ 'side_panel.service' | translate:param }}</a></li>
+  </ul>
+
+  <a data-activates="slide-out" #menuButton (click) = "onClickSidePanel(sideNavButton)" #sideNavButton class="button-collapse"><i class="material-icons">menu</i></a>
+</div>
+

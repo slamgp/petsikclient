@@ -8,14 +8,18 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {MatSelectModule} from "@angular/material";
 import {NoopAnimationsModule} from "@angular/platform-browser/animations";
 import { SidePanelComponent } from './component/side-panel/side-panel.component';
-import { MyProfileComponent } from './component/my-profile/my-profile.component';
 import { PetsDateComponent } from './component/pets-date/pets-date.component';
 import { PetsServiceComponent } from './component/pets-service/pets-service.component';
 import {RouterModule} from "@angular/router";
+import { UserAvatarComponent } from './component/user-avatar/user-avatar.component';
+import { MyPetsComponent } from './component/my-pets/my-pets.component';
+import {MyProfileComponent} from "./component/my-profile/my-profile.component";
+import { BoardComponent } from './component/board/board.component';
 
 const routes = [
   {path: '', component:  MyProfileComponent},
-  {path: 'date', component:  PetsDateComponent},
+  {path: 'pets', component:  MyPetsComponent},
+  {path: 'board', component:  BoardComponent},
   {path: 'service', component:  PetsServiceComponent}
 ]
 
@@ -25,7 +29,10 @@ const routes = [
     SidePanelComponent,
     MyProfileComponent,
     PetsDateComponent,
-    PetsServiceComponent
+    PetsServiceComponent,
+    UserAvatarComponent,
+    MyPetsComponent,
+    BoardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,6 @@
 import { ViewChild, Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import {MatSelect} from "@angular/material";
-import {Logs} from "selenium-webdriver";
 
 @Component({
   selector: 'app-root',
@@ -24,4 +23,9 @@ export class AppComponent {
   switchLanguage(lang) {
     this.translate.use(lang);
   }
+
+  openLanguage() {
+   // this.select.
+  }
+
 }

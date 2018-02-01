@@ -1,1 +1,12 @@
-$main-background-color: #43a047;
+$main-background-color: #e8eaf6;
+$background-to-gradient-start: #fffde7;
+$background-to-gradient-end: #e8eaf6;
+$main-font: GillSans, Calibri, Trebuchet, sans-serif;
+$main-font-color: #4a148c!important;
+
+$nav-panel-background: linear-gradient($background-to-gradient-start, $background-to-gradient-end);
+$nav-panel-logo-size: 3em;
+
+$side-panel-background: linear-gradient($background-to-gradient-end, $background-to-gradient-start);
+$side-panel-font-size: 1.5em;
+

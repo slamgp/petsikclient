@@ -5,7 +5,9 @@
   "side_panel": {
     "my_profile": "ПРОФІЛЬ",
     "pets_date": "ПОБАЧЕННЯ",
-    "service": "СЕРВІСИ"
+    "service": "СЕРВІСИ",
+    "my_pets": "УЛЮБЛЕНЦІ",
+    "board": "ДОШКА"
   },
 
   "profile": {
@@ -18,5 +20,13 @@
 
   "service": {
     "title": "СЕРВІСИ"
+  },
+
+  "pets": {
+    "title": "ДОМАШНІ УЛЮБЛЕНЦІ"
+  },
+
+  "board": {
+    "title": "ДОШКА"
   }
 }

@@ -4,7 +4,9 @@
   "side_panel": {
     "my_profile": "PROFILE",
     "pets_date": "DATE",
-    "service": "SERVICES"
+    "service": "SERVICES",
+    "my_pets": "PETS",
+    "board": "BOARD"
   },
 
   "profile": {
@@ -17,5 +19,13 @@
 
   "service": {
     "title": "SERVICE"
+  },
+
+  "pets": {
+    "title": "PETS"
+  },
+
+  "board": {
+    "title": "BOARD"
   }
 }

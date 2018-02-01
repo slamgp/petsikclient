@@ -1,11 +1,19 @@
+@import "../assets/css/option";
+
 .nav-wrapper {
-  background: linear-gradient( #1b5e20, #4caf50);
-  font-family: GillSans, Calibri, Trebuchet, sans-serif;
-  color: white;
+  background: $nav-panel-background;
+  font-family: $main-font;
+  color: $main-font-color;
+  box-shadow: inset 0 0 2px $main-font-color
 }
 
+.brand-logo {
+  color: $main-font-color;
+}
+
+
 .nav-wrapper a {
-  font-size: 3em;
+  font-size: $nav-panel-logo-size;
 }
 
 .mat-form-field {
@@ -18,16 +26,26 @@ header, main, footer {
 }
 
 .main_container {
-  padding-top: 40px;
-}
-.mat-select-trigger {
-  color: white;
+  padding-top: 5px;
 }
 
-.mat-select {
-  color: white;
+header, main, footer {
+  padding-left: 300px;
 }
 
-.mat-select-arrow {
-  color: white;
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
 }
+
+.login {
+  height: 70px;
+  width: 70px;
+}
+
+.right i {
+  font-size: 45px;
+  cursor: pointer;
+}
+

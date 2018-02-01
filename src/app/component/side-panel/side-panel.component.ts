@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-side-panel',
@@ -6,13 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-panel.component.scss']
 })
 export class SidePanelComponent implements OnInit {
+  @ViewChild('sideNavButton') sideNavButton;
 
   constructor() { }
 
   ngOnInit() {
+
   }
 
-  onClickSidePanel(el) {
-    el.sideNav('show');
+  onClickSidePanel(btn) {
+
   }
 }

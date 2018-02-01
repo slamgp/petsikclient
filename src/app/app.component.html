@@ -1,14 +1,14 @@
 
 <nav>
   <div class="nav-wrapper">
-    <a class="brand-logo"><i class="material-icons"></i>PETSIK</a>
-    <ul class="right hide-on-med-and-down">
-      <li><i class="material-icons">language</i></li>
+    <a class="brand-logo left"><i class="material-icons"></i>PETSIK</a>
+    <ul class="right">
+      <li><i class="material-icons" (click) = "openLanguage()">language</i></li>
       <li>
         <div>
           <mat-form-field>
             <mat-select (selectionChange) = "switchLanguage($event.value, select)" #select>
-              <mat-option *ngFor="let currentLang of translate.getLangs()" [value]="currentLang" style = 'background: #43a047; color: white'>
+              <mat-option *ngFor="let currentLang of translate.getLangs()" [value]="currentLang">
                 {{ currentLang }}
               </mat-option>
             </mat-select>
@@ -16,12 +16,14 @@
         </div>
       </li>
     </ul>
+    <ul class="right">
+      <i class="material-icons">account_circle</i>
+    </ul>
   </div>
 </nav>
 
 
 <app-side-panel></app-side-panel>
-
 
 <div class="main_container">
   <router-outlet></router-outlet>
