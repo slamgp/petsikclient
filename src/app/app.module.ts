@@ -15,6 +15,7 @@ import { UserAvatarComponent } from './component/user-avatar/user-avatar.compone
 import { MyPetsComponent } from './component/my-pets/my-pets.component';
 import {MyProfileComponent} from "./component/my-profile/my-profile.component";
 import { BoardComponent } from './component/board/board.component';
+import { LoginComponent } from './component/login/login.component';
 
 const routes = [
   {path: '', component:  MyProfileComponent},
@@ -32,7 +33,9 @@ const routes = [
     PetsServiceComponent,
     UserAvatarComponent,
     MyPetsComponent,
-    BoardComponent
+    BoardComponent,
+    LoginComponent
+
   ],
   imports: [
     BrowserModule,
