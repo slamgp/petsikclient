@@ -16,34 +16,31 @@ export class User {
 }
 
 export class ServerProperty {
-  public static serverUrl = "http://localhost:8095/server/login";
+  public static serverUrl = "http://localhost:8095/server/outh";
 }
 
 @Injectable()
 export class LoginServiceService {
-  private user_field = "user";
+  private user_field = "user"
+  private token;
   constructor(private http : HttpClient ) { }
 
   login (email: string, password: string)
   {
-    let data = {"username": email, "password": password, "submit": "Login"};
+    let data = {"username": email, "password": password};
 
-    let headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded'});
 
-    this.http.post(ServerProperty.serverUrl, data, {headers: headers}).subscribe(data=>console.log(data));
+    this.http.post(ServerProperty.serverUrl, data).subscribe(data =>this.token = data['data']);
 
-    localStorage.setItem(this.user_field, email);
+    localStorage.setItem("token", this.token);
+
   }
 
   login1 (email: string, password: string)
   {
-   // let data = JSON.stringify({"name": "kaban"});
-    let headers = new HttpHeaders({'Content-Type': 'text/plain', 'Authorization':'Basic MTExQGdtYWlsLmNvbToxMTE='});
+    let headers = new HttpHeaders({"Authorization" : this.token});
 
-    //this.http.post("http://localhost:8095/server/hello", data, {headers: headers}).subscribe(data=>console.log(data));
-
-    this.http.get("http://localhost:8095/server/rest", {headers:headers}).subscribe(data=>console.log(data));
-
+    this.http.get("http://localhost:8095/server/rest", {headers : headers}).subscribe(data=>console.log(data));
 
   }
 
