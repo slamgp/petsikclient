@@ -26,13 +26,6 @@ export class AppComponent {
     this.translate.use(lang);
   }
 
-  openLanguage() {
-   // this.select.
-  }
-
-  login() {
-    this.loginService.login("111@gmail.com", "111");
-  }
 
   login1() {
     this.loginService.login1("111@gmail.com", "111");

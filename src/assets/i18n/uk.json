@@ -28,5 +28,11 @@
 
   "board": {
     "title": "ДОШКА"
+  },
+
+  "general": {
+    "login": "ВВІЙТИ",
+    "email": "ПОШТА",
+    "password": "ПАРОЛЬ"
   }
 }

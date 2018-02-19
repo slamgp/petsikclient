@@ -27,5 +27,11 @@
 
   "board": {
     "title": "BOARD"
+  },
+
+  "general": {
+    "login": "LOGIN",
+    "email": "EMAIL",
+    "password": "PASSWORD"
   }
 }

@@ -16,6 +16,7 @@ import { MyPetsComponent } from './component/my-pets/my-pets.component';
 import {MyProfileComponent} from "./component/my-profile/my-profile.component";
 import { BoardComponent } from './component/board/board.component';
 import { LoginComponent } from './component/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 const routes = [
   {path: '', component:  MyProfileComponent},
@@ -35,7 +36,6 @@ const routes = [
     MyPetsComponent,
     BoardComponent,
     LoginComponent
-
   ],
   imports: [
     BrowserModule,
@@ -49,7 +49,8 @@ const routes = [
     }),
     MatSelectModule,
     NoopAnimationsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
 
   providers: [],

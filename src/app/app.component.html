@@ -1,7 +1,7 @@
 
 <nav>
   <div class="nav-wrapper">
-    <a class="brand-logo left"><i class="material-icons"></i>PETSIK</a>
+    <a class="brand-logo left"><i class="material-icons logo">pets</i>PETSIK</a>
     <ul class="right">
       <li><i class="material-icons" (click) = "login1()">language</i></li>
       <li>
@@ -17,14 +17,16 @@
       </li>
     </ul>
     <ul class="right">
-      <i class="material-icons" (click) = "login()">account_circle</i>
+      <i class="material-icons modal-trigger"  href="#modal1">account_circle</i>
     </ul>
   </div>
 </nav>
-
 
 <app-side-panel></app-side-panel>
 
 <div class="main_container">
   <router-outlet></router-outlet>
 </div>
+
+  <app-login></app-login>
+

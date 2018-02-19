@@ -1,3 +1,27 @@
-<p>
-  login works!
-</p>
+<div class="row loginForm">
+  <form class="col s12">
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <div class="row">
+          <div class="input-field col s12 ">
+            <input [(ngModel)]="email" [ngModelOptions]="{standalone: true}" id="email_f" type="email" class="validate">
+            <label for="email_f">{{ 'general.email' | translate:param }}</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 ">
+            <input [(ngModel)]="password" [ngModelOptions]="{standalone: true}"  id="password_f" type="password" class="validate">
+            <label for="password_f">{{ 'general.password' | translate:param }}</label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+       <!-- <a class="modal-action modal-close waves-effect waves-green btn-flat" (click) = "sentAuthenticateRequest()">{{ 'general.login' | translate:param }}</a> -->
+        <a class="nonVisible modal-action modal-close  waves-effect waves-green btn-flat" #closeButton></a>
+        <a class="waves-effect waves-green btn-flat" (click) = "sentAuthenticateRequest()">{{ 'general.login' | translate:param }}</a>
+      </div>
+    </div>
+  </form>
+</div>
+
