@@ -9,20 +9,43 @@ import {ViewChild} from "@angular/core";
 })
 export class LoginComponent implements OnInit {
   @ViewChild('closeButton') closeButton: ElementRef;
-  email = "";
-  password = "";
-
+  loginEmail = "";
+  loginPassword = "";
+  loginFale: boolean = false;
+  registrationFale: boolean = false;
+  registrationEmail = "";
+  registrationPassword = "";
+  registrationPasswordRepeat = "";
 
   constructor(private servise: LoginServiceService) { }
 
   ngOnInit() {
+    this.loginFale = false;
   }
 
   sentAuthenticateRequest() {
-    this.servise.login(this.email, this.password, (() => this.closeLoginForm()));
+    this.loginFale = false;
+    this.servise.login(this.loginEmail, this.loginPassword, (() => this.closeLoginForm()), (() => this.setLoginFale()));
+  }
+
+  sentRegistrationRequest() {
+    this.loginFale = false;
+    this.servise.registrate(this.registrationEmail, this.registrationPassword, (() => this.closeLoginForm()), (() => this.setRegistrationFale()));
   }
 
   closeLoginForm() {
       this.closeButton.nativeElement.click();
+  }
+
+  setLoginFale() {
+    this.loginFale = true;
+  }
+
+  setRegistrationFale() {
+    this.registrationFale = true;
+  }
+
+  public  reset() {
+    this.loginFale = false;
   }
 }

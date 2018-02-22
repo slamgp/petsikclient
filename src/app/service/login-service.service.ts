@@ -23,18 +23,24 @@ export class LoginServiceService {
   constructor(private http: HttpClient) {
   }
 
-  login(email: string, password: string, callback) {
+  login(email: string, password: string, succesCallback, failCallBack) {
     let data = {"username": email, "password": password};
 
 
     this.http.post(ServerProperty.serverUrl, data).subscribe(data => {
       if ('true' == data['isAuthenticate']) {
         this.setAuthData(email, data['data']);
-        callback();
+        succesCallback();
       } else {
+        failCallBack();
         this.setAuthData(null, null)
       }
     });
+  }
+
+  registrate(email: string, password: string, succesCallback, failCallBack) {
+    console.log("email = " + email + ", password = " + password);
+    succesCallback();
   }
 
   login1(email: string, password: string) {
@@ -44,12 +50,15 @@ export class LoginServiceService {
     }
   }
 
-  logout(email: string) {
-    localStorage.removeItem(email);
+  public logout() {
+    localStorage.removeItem("userData");
   }
 
   getAuthData(): string {
     var json = JSON.parse(localStorage.getItem("userData"))
+    if (json == null) {
+      return null;
+    }
     return json["aouthToken"];
   }
 
@@ -64,8 +73,11 @@ export class LoginServiceService {
   }
 
   public isAuthenticate(): boolean {
-    var json = JSON.parse(localStorage.getItem("userData"))
+    if (localStorage.getItem("userData") == null) {
+      return false;
+    }
     return (this.getAuthData() != null);
   }
+
 
 }

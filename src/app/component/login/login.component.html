@@ -2,26 +2,69 @@
   <form class="col s12">
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
-      <div class="modal-content">
+
+      <ul id="tabs-swipe-demo" class="tabs">
+        <li class="tab col s3"><a href="#loginTab">{{ 'general.login' | translate:param }}</a></li>
+        <li class="tab col s3"><a class="active" href="#registartionTab">{{ 'general.registration' | translate:param }}</a></li>
+      </ul>
+
+      <div class="modal-content" id = "loginTab">
         <div class="row">
           <div class="input-field col s12 ">
-            <input [(ngModel)]="email" [ngModelOptions]="{standalone: true}" id="email_f" type="email" class="validate">
-            <label for="email_f">{{ 'general.email' | translate:param }}</label>
+            <input [(ngModel)]="loginEmail" [ngModelOptions]="{standalone: true}" id="email_login" type="email" class="validate">
+            <label for="email_login">{{ 'general.email' | translate:param }}</label>
           </div>
         </div>
+
         <div class="row">
           <div class="input-field col s12 ">
-            <input [(ngModel)]="password" [ngModelOptions]="{standalone: true}"  id="password_f" type="password" class="validate">
-            <label for="password_f">{{ 'general.password' | translate:param }}</label>
+            <input [(ngModel)]="loginPassword" [ngModelOptions]="{standalone: true}"  id="password_login" type="password" class="validate">
+            <label for="password_login">{{ 'general.password' | translate:param }}</label>
           </div>
+        </div>
+
+        <label *ngIf="loginFale" class="erroMessage">{{ 'message.userNotFound' | translate:param }}</label>
+
+        <div class="modal-footer">
+          <!-- <a class="modal-action modal-close waves-effect waves-green btn-flat" (click) = "sentAuthenticateRequest()">{{ 'general.login' | translate:param }}</a> -->
+          <a class="nonVisible modal-action modal-close  waves-effect waves-green btn-flat" #closeButton></a>
+          <a class="waves-effect waves-green btn-flat" (click) = "sentAuthenticateRequest()">{{ 'general.sent' | translate:param }}</a>
         </div>
       </div>
-      <div class="modal-footer">
-       <!-- <a class="modal-action modal-close waves-effect waves-green btn-flat" (click) = "sentAuthenticateRequest()">{{ 'general.login' | translate:param }}</a> -->
-        <a class="nonVisible modal-action modal-close  waves-effect waves-green btn-flat" #closeButton></a>
-        <a class="waves-effect waves-green btn-flat" (click) = "sentAuthenticateRequest()">{{ 'general.login' | translate:param }}</a>
+
+      <div class="modal-content" id = "registartionTab">
+        <div class="row">
+          <div class="input-field col s12 ">
+            <input [(ngModel)]="registrationEmail" [ngModelOptions]="{standalone: true}" id="email_reg" type="email" class="validate">
+            <label for="email_reg">{{ 'general.email' | translate:param }}</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12 ">
+            <input [(ngModel)]="registrationPassword" [ngModelOptions]="{standalone: true}"  id="password_req" type="password" class="validate">
+            <label for="password_req">{{ 'general.password' | translate:param }}</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12 ">
+            <input [(ngModel)]="registrationPasswordRepeat" [ngModelOptions]="{standalone: true}"  id="password_req2" type="password" class="validate">
+            <label for="password_req2">{{ 'general.passwordRepeat' | translate:param }}</label>
+          </div>
+        </div>
+
+        <label *ngIf="registrationFale" class="erroMessage">{{ 'message.registrationError' | translate:param }}</label>
+        <div class="modal-footer">
+          <!-- <a class="modal-action modal-close waves-effect waves-green btn-flat" (click) = "sentAuthenticateRequest()">{{ 'general.login' | translate:param }}</a> -->
+          <a class="waves-effect waves-green btn-flat" (click) = "sentRegistrationRequest()">{{ 'general.sent' | translate:param }}</a>
+        </div>
       </div>
     </div>
+
+
+
   </form>
 </div>
+
 

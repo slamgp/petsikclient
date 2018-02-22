@@ -17,8 +17,10 @@
       </li>
     </ul>
     <ul class="right">
-      <i class="material-icons modal-trigger"  href="#modal1">account_circle</i>
+      <i class="material-icons"  href="#modal1" (click)="loginOnClick()">{{getsecurStatus()}}</i>
+      <i #loginLogautBtn class="nonVisible material-icons modal-trigger"  href="#modal1"></i>
     </ul>
+
   </div>
 </nav>
 
@@ -28,5 +30,7 @@
   <router-outlet></router-outlet>
 </div>
 
-  <app-login></app-login>
+<app-login #loginComponent></app-login>
+
+
 

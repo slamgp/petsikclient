@@ -30,8 +30,16 @@
   },
 
   "general": {
-    "login": "LOGIN",
+    "sent": "SENT",
     "email": "EMAIL",
-    "password": "PASSWORD"
+    "password": "PASSWORD",
+    "passwordRepeat": "REPEAT PASSWORD",
+    "login": "LOGIN",
+    "registration": "REGISTRATION"
+  },
+
+  "message": {
+    "userNotFound": "User isn't find!",
+    "registrationError": "Registration error!"
   }
 }

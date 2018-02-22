@@ -31,8 +31,16 @@
   },
 
   "general": {
-    "login": "ВВІЙТИ",
+    "sent": "ВІДПРАВИТИ",
     "email": "ПОШТА",
-    "password": "ПАРОЛЬ"
+    "password": "ПАРОЛЬ",
+    "passwordRepeat": "ПОВТОРІТЬ ПАРОЛЬ",
+    "login": "ЛОГІН",
+    "registration": "РЕЄСТРАЦІЯ"
+  },
+
+  "message": {
+    "userNotFound": "Користувач не знайдений!",
+    "registrationError": "Помилка реєстрації"
   }
 }
