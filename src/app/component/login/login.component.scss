@@ -4,3 +4,17 @@
   color: $main-font-color;
   margin: 0 20% 0 20%;
 }
+
+.tabs {
+  background-color: $main-background-color;
+}
+
+.tab a {
+  color: $main-font-color;
+}
+
+.loginHeader {
+  color: $main-font-color;
+  font-size: 1.5em;
+  margin-left: 30%;
+}

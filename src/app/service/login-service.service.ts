@@ -13,7 +13,8 @@ export class User {
 }
 
 export class ServerProperty {
-  public static serverUrl = "http://localhost:8095/server/outh";
+  public static serverLoginUrl = "http://localhost:8095/server/outh";
+  public static serverRegistrationUrl = "http://localhost:8095/server/registration";
 }
 
 @Injectable()
@@ -27,7 +28,7 @@ export class LoginServiceService {
     let data = {"username": email, "password": password};
 
 
-    this.http.post(ServerProperty.serverUrl, data).subscribe(data => {
+    this.http.post(ServerProperty.serverLoginUrl, data).subscribe(data => {
       if ('true' == data['isAuthenticate']) {
         this.setAuthData(email, data['data']);
         succesCallback();
@@ -39,8 +40,16 @@ export class LoginServiceService {
   }
 
   registrate(email: string, password: string, succesCallback, failCallBack) {
-    console.log("email = " + email + ", password = " + password);
-    succesCallback();
+    let data = {"username": email, "password": password};
+
+
+    this.http.post(ServerProperty.serverRegistrationUrl, data).subscribe(data => {
+      if ('true' == data['result']) {
+        succesCallback();
+      } else {
+        failCallBack();
+      }
+    });
   }
 
   login1(email: string, password: string) {

@@ -9,6 +9,8 @@
       </ul>
 
       <div class="modal-content" id = "loginTab">
+        <a class="loginHeader">{{ 'general.login' | translate:param }}</a>
+
         <div class="row">
           <div class="input-field col s12 ">
             <input [(ngModel)]="loginEmail" [ngModelOptions]="{standalone: true}" id="email_login" type="email" class="validate">
@@ -33,6 +35,8 @@
       </div>
 
       <div class="modal-content" id = "registartionTab">
+        <a class="loginHeader">{{ 'general.registration' | translate:param }}</a>
+
         <div class="row">
           <div class="input-field col s12 ">
             <input [(ngModel)]="registrationEmail" [ngModelOptions]="{standalone: true}" id="email_reg" type="email" class="validate">
