@@ -47,8 +47,7 @@ export class LoginServiceService {
       if ('true' == data['result']) {
         succesCallback();
       } else {
-        alert( data['message'])
-        failCallBack();
+        failCallBack(data['error_type']);
       }
     });
   }

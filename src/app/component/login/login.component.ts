@@ -16,6 +16,8 @@ export class LoginComponent implements OnInit {
   registrationEmail = "";
   registrationPassword = "";
   registrationPasswordRepeat = "";
+  private regisrationError:string;
+  private succesLoginAction = null;
 
   constructor(private servise: LoginServiceService) { }
 
@@ -30,10 +32,13 @@ export class LoginComponent implements OnInit {
 
   sentRegistrationRequest() {
     this.loginFale = false;
-    this.servise.registrate(this.registrationEmail, this.registrationPassword, (() => this.closeLoginForm()), (() => this.setRegistrationFale()));
+    this.servise.registrate(this.registrationEmail, this.registrationPassword, (() => this.closeLoginForm()), ((error:string) => this.setRegistrationFale(error)));
   }
 
   closeLoginForm() {
+      if (this.succesLoginAction != null) {
+        this.succesLoginAction();
+      }
       this.closeButton.nativeElement.click();
   }
 
@@ -41,11 +46,18 @@ export class LoginComponent implements OnInit {
     this.loginFale = true;
   }
 
-  setRegistrationFale() {
+  setRegistrationFale(error: string) {
     this.registrationFale = true;
+    this.regisrationError = ('message.' + error);
   }
 
   public  reset() {
     this.loginFale = false;
+    this.registrationFale = false;
   }
+
+  setSuccesLoginAction (action) {
+    this.succesLoginAction =  action;
+  }
+
 }

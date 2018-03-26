@@ -10,7 +10,11 @@
   },
 
   "profile": {
-    "title": "PROFILE"
+    "title": "PROFILE",
+    "name": "NAME",
+    "phone": "PHONE",
+    "settings": "SETTINGS",
+    "passwordNew": "NEW PASSWORD"
   },
 
   "date": {
@@ -40,6 +44,10 @@
 
   "message": {
     "userNotFound": "User isn't find!",
-    "registrationError": "Registration error!"
+    "registrationError": "Registration error!",
+    "UserDataNotValidException": "Login or password are empty",
+    "EmailIsBlockedException": "This is email is blocked",
+    "EmailIsBuseException": "This is email is busy"
+
   }
 }

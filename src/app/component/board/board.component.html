@@ -1,4 +1,10 @@
-<div style="text-align:center" class = "board_container" >
+<div style="text-align:center" class="profile_container fon" *ngIf="!isAuthentikate">
+  <h1>
+    XER BOARD!
+  </h1>
+</div>
+
+<div style="text-align:center" class = "board_container" *ngIf="isAuthentikate">
   <h1>
     {{ 'board.title' | translate:param }}
   </h1>

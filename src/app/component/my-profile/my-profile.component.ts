@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LoginServiceService} from "../../service/login-service.service";
 
 @Component({
   selector: 'app-my-profile',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyProfileComponent implements OnInit {
 
-  constructor() { }
+  private isAuthentikate:boolean;
+  private loginService:LoginServiceService;
+
+  constructor(loginService: LoginServiceService) {
+    this.loginService = loginService;
+  }
 
   ngOnInit() {
+    this.isAuthentikate = this.loginService.isAuthenticate();
   }
 
 }

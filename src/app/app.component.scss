@@ -26,7 +26,10 @@ header, main, footer {
 }
 
 .main_container {
-  padding-top: 5px;
+  margin-left: 20vw;
+  width: 70vw;
+  height: 100vh;
+  position: relative;
 }
 
 header, main, footer {
@@ -52,3 +55,4 @@ header, main, footer {
 .logo {
   font-size: 45px;
 }
+

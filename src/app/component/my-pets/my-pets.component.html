@@ -1,4 +1,11 @@
-<div style="text-align:center" class = "pets_container" >
+<div style="text-align:center" class="profile_container fon" *ngIf="!isAuthentikate">
+  <h1>
+    XER PETS!
+  </h1>
+</div>
+
+
+<div style="text-align:center" class = "pets_container fon" *ngIf="isAuthentikate">
   <h1>
     {{ 'pets.title' | translate:param }}
   </h1>

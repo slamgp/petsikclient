@@ -16,6 +16,7 @@ export class AppComponent {
   @ViewChild('select') select: MatSelect;
   @ViewChild('loginComponent') loginComponent: LoginComponent;
   //securStatus: string = "account_circle"
+  secureStatus = "";
 
   constructor(private translate: TranslateService, private loginService: LoginServiceService) {
     this.translate.addLangs(['uk','en']);
@@ -24,6 +25,8 @@ export class AppComponent {
 
   ngOnInit() {
     this.select.value =   this.translate.getDefaultLang();
+    this.setSecurStatus();
+    this.loginComponent.setSuccesLoginAction(()=> this.setSecurStatus());
   }
 
   switchLanguage(lang) {
@@ -38,6 +41,7 @@ export class AppComponent {
   loginOnClick() {
     if (this.loginService.isAuthenticate()) {
       this.loginService.logout();
+      this.setSecurStatus();
     } else {
       this.loginLogautBtn.nativeElement.click();
     }
@@ -45,11 +49,11 @@ export class AppComponent {
   }
 
 
-  getsecurStatus(): string {
+  setSecurStatus() {
     if (this.loginService.isAuthenticate()) {
-      return "close";
+      this.secureStatus = "close";
     } else {
-      return "account_circle";
+      this.secureStatus = "account_circle";
     }
 
   }

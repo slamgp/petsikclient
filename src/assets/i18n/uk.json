@@ -11,7 +11,11 @@
   },
 
   "profile": {
-    "title": "ПРОФІЛЬ"
+    "title": "ПРОФІЛЬ",
+    "name": "ІМ'Я",
+    "phone": "ТЕЛЕФОН",
+    "settings": "НАЛАШТУВАННЯ",
+    "passwordNew": "НОВИЙ ПАРОЛЬ"
   },
 
   "date": {
@@ -41,6 +45,9 @@
 
   "message": {
     "userNotFound": "Користувач не знайдений!",
-    "registrationError": "Помилка реєстрації"
+    "registrationError": "Помилка реєстрації",
+    "UserDataNotValidException": "Логін або пароль не заповнено",
+    "EmailIsBlockedException": "Дана електронна пошта заблокована",
+    "EmailIsBuseException": "Користувач з даною електронною поштою вже зареєстрований"
   }
 }

@@ -3,4 +3,30 @@
 .profile_container {
   font-family: $main-font;
   color: $main-font-color;
+  overflow:auto;
 }
+
+h1 {
+  color: $main-font-color;
+}
+
+h3 {
+  color: $main-font-color;
+  font-size: 0.5em;
+}
+
+.avatar {
+  border-radius: 50%!important;
+  margin: auto;
+}
+
+.profilr_card {
+  box-shadow: none;
+}
+
+.profile_block {
+  box-shadow: $main-background-color;
+  border: solid $main-background-color;
+  border-radius: 1%!important;
+}
+

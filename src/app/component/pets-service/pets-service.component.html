@@ -1,4 +1,10 @@
-<div style="text-align:center" class = "service_container" >
+<div style="text-align:center" class="profile_container fon" *ngIf="!isAuthentikate">
+  <h1>
+    XER SERVICE!
+  </h1>
+</div>
+
+<div style="text-align:center" class = "service_container fon" *ngIf="isAuthentikate">
   <h1>
     {{ 'service.title' | translate:param }}
   </h1>

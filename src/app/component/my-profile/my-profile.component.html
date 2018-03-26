@@ -1,6 +1,90 @@
-<div style="text-align:center" class = "profile_container" >
+<div style="text-align:center" class="profile_container fon" *ngIf="!isAuthentikate">
   <h1>
-    {{ 'profile.title' | translate:param }}
+    XER PROFILE!
   </h1>
 </div>
+
+<div style="text-align:center" class="profile_container fon" *ngIf="isAuthentikate">
+  <h1>
+    {{ 'profile.title' | translate:param }}
+    <div class="row profile_block">
+      <div class="col s12">
+        <div class="row">
+          <div class="col s4">
+            <div class="card profilr_card">
+              <div class="card-image ">
+                <img class="avatar" src="../assets/img/default_avatar.jpg">
+                <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                  class="material-icons large">edit</i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s6">
+            <div class="input-field col s12">
+              <input id="email" type="text" class="validate">
+              <label for="email">{{ 'general.email' | translate:param }}</label>
+            </div>
+          </div>
+
+          <div class="col s6">
+            <div class="input-field col s12">
+              <input id="name" type="text" class="validate">
+              <label for="name">{{ 'profile.name' | translate:param }}</label>
+            </div>
+          </div>
+
+          <div class="col s6">
+            <div class="input-field col s12">
+              <input id="last_name" type="text" class="validate">
+              <label for="last_name">{{ 'profile.phone' | translate:param }}</label>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col s12 ">
+        <a class=" right waves-effect waves-light btn-large">{{ 'general.sent' | translate:param }}</a>
+      </div>
+    </div>
+
+    <div class="row profile_block" >
+      <h3>
+        {{ 'profile.settings' | translate:param }}
+      </h3>
+      <div class="col s12 ">
+        <div class="row">
+
+
+          <div class="col s12">
+            <div class="input-field col s12">
+              <input id="password" type="text" class="validate">
+              <label for="password">{{ 'general.password' | translate:param }}</label>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="input-field col s12">
+              <input id="new_password" type="text" class="validate">
+              <label for="new_password">{{ 'profile.passwordNew' | translate:param }}</label>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="input-field col s12">
+              <input id="repeat_password" type="text" class="validate">
+              <label for="repeat_password">{{ 'general.passwordRepeat' | translate:param }}</label>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col s12 ">
+        <a class=" right waves-effect waves-light btn-large">{{ 'general.sent' | translate:param }}</a>
+      </div>
+    </div>
+
+  </h1>
+</div>
+
 
