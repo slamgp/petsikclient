@@ -20,31 +20,32 @@
             </div>
           </div>
 
-          <div class="col s6">
+          <div class="col s8 right">
             <div class="input-field col s12">
-              <input id="email" type="text" class="validate">
+              <input id="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" placeholder=""  type="text" class="validate">
               <label for="email">{{ 'general.email' | translate:param }}</label>
             </div>
           </div>
 
-          <div class="col s6">
+
+          <div class="col s8 right">
             <div class="input-field col s12">
-              <input id="name" type="text" class="validate">
+              <input id="name" type="text" class="validate"  [(ngModel)]="name" [ngModelOptions]="{standalone: true}" placeholder=""  >
               <label for="name">{{ 'profile.name' | translate:param }}</label>
             </div>
           </div>
 
-          <div class="col s6">
+          <div class="col s8 right">
             <div class="input-field col s12">
-              <input id="last_name" type="text" class="validate">
-              <label for="last_name">{{ 'profile.phone' | translate:param }}</label>
+              <input id="phone" type="text" class="validate"  [(ngModel)]="phone" [ngModelOptions]="{standalone: true}" placeholder=""  >
+              <label for="phone">{{ 'profile.phone' | translate:param }}</label>
             </div>
           </div>
 
         </div>
       </div>
       <div class="col s12 ">
-        <a class=" right waves-effect waves-light btn-large">{{ 'general.sent' | translate:param }}</a>
+        <a class=" right waves-effect waves-light btn-large" (click) = "sentProfileMainData()" >{{ 'general.sent' | translate:param }}</a>
       </div>
     </div>
 

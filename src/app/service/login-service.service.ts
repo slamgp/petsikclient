@@ -15,6 +15,9 @@ export class User {
 export class ServerProperty {
   public static serverLoginUrl = "http://localhost:8095/server/outh";
   public static serverRegistrationUrl = "http://localhost:8095/server/registration";
+  public static serverProfileUrl = "http://localhost:8095/server/profile";
+
+  public static serverProfileSetNewMainDataUrl = "http://localhost:8095/server/profile/setnewmaindata";
 }
 
 @Injectable()
@@ -54,8 +57,7 @@ export class LoginServiceService {
 
   login1(email: string, password: string) {
     if (this.getAuthData() != null) {
-        let headers = new HttpHeaders({"Authorization": this.getAuthData()});
-        this.http.get("http://localhost:8095/server/rest", {headers: headers}).subscribe(data=>console.log(data));
+        this.http.get("http://localhost:8095/server/rest", this.getAuthorizeHeader()).subscribe(data=>console.log(data));
     }
   }
 
@@ -89,4 +91,26 @@ export class LoginServiceService {
   }
 
 
+  getProfileData(callback) {
+    this.http.get(ServerProperty.serverProfileUrl, this.getAuthorizeHeader()).subscribe(data=>{
+      callback(data);
+    });
+  }
+
+  sentProfileMainData(email: string, phone: string, name: string) {
+    let data = {"email": email, "phone": phone, "name": name};
+
+
+    this.http.post(ServerProperty.serverProfileSetNewMainDataUrl, data, this.getAuthorizeHeader()).subscribe(data => {
+      if ('true' == data['result']) {
+      } else {
+       console.log("false to set data")
+      }
+    });
+  }
+
+  getAuthorizeHeader() {
+    let headers = new HttpHeaders({"Authorization": this.getAuthData()});
+    return {headers: headers};
+  }
 }
